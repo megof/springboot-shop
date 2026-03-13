@@ -7,6 +7,15 @@
 </head>
 <body>
     <h1>Tomcat iniciado, corriendo correctamente</h1>
-    <span th:text="${name}"><h6 th:text="${lastname}"></h6></span>
+    <span th:text="${name}">
+        <h6 th:text="${lastname}"></h6>
+    </span>
+    <h6 th:text="${name}">Name</h6>
+    <h6 th:text="${lastname}"></h6>
+    <span th:text="${date}">
+        <h6 th:text="${time}"></h6>
+    </span>
+    <h6 th:text="${date}"></h6>    
+    <h6 th:text="${time}">Time</h6>
 </body>
 </html>
