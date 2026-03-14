@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import models.User;
+import models.dto.UserDto;
 
 
 @RestController
@@ -35,4 +36,15 @@ public class UserRestController {
         return body;
     }
     
+    
+    @GetMapping("/detailsdto")
+    public UserDto detailsdto() {
+        User user = new User("Megof", "Timer", 0);
+        UserDto userdto = new UserDto();
+
+        userdto.setTitle("titledto");
+        userdto.setUser(user);
+
+        return userdto;
+    }
 }
