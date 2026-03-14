@@ -1,6 +1,9 @@
 package com.megof.springboot.shop.springboot_shop.controllers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,4 +50,29 @@ public class UserRestController {
 
         return userdto;
     }
+
+    @GetMapping("/detailslts")
+    public List<User> detailslts() {
+        User user = new User("Megof", "Timer", 0);
+        User user1 = new User("David", "Ospina", 0);
+        User user2 = new User("Juan", "Ortega", 0);
+
+       List<User> users = new ArrayList<>();
+       users.add(user);
+       users.add(user1);
+       users.add(user2);
+
+        return users;
+    }
+
+    @GetMapping("/detailsarr")
+    public List<User> detailsarr() {
+        User user = new User("Megof", "Timer", 0);
+        User user1 = new User("David", "Ospina", 0);
+        User user2 = new User("Juan", "Ortega", 0);
+
+       List<User> users = Arrays.asList(user, user1, user2); 
+       return users;
+    }
+
 }
