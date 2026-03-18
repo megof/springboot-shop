@@ -21,5 +21,20 @@
             </tr>
         </tbody>
     </table>
+    <div th:if="${usrs.isEmpty()}" th:text="${'Lista global vacía por el momento, vuelve más tarde :)'}"></div>
+    <table th:if="${!(usrs.isEmpty())}" border="1px">
+        <thead align="center">
+            <th>Name</th>
+            <th>LastName</th>
+            <th>Count</th>
+        </thead>
+        <tbody align="center">
+            <tr th:each="usr: ${usrs}">
+                <td th:text="${usr.name}"></td>
+                <td th:text="${usr.lastname}"></td>
+                <td th:text="${usr.count}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
